@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Devices.Enumeration;
 using Windows.Storage.Streams;
@@ -17,11 +18,7 @@ namespace SDKTemplate
         {
             if (IsSigDefinedUuid(service.Uuid))
             {
-                GattNativeServiceUuid serviceName;
-                if (Enum.TryParse(Utilities.ConvertUuidToShortId(service.Uuid).ToString(), out serviceName))
-                {
-                    return serviceName.ToString();
-                }
+                return ConvertUuidToHexString(service.Uuid);
             }
             return "Custom Service: " + service.Uuid;
         }
@@ -30,12 +27,7 @@ namespace SDKTemplate
         {
             if (IsSigDefinedUuid(characteristic.Uuid))
             {
-                GattNativeCharacteristicUuid characteristicName;
-                if (Enum.TryParse(Utilities.ConvertUuidToShortId(characteristic.Uuid).ToString(),
-                    out characteristicName))
-                {
-                    return characteristicName.ToString();
-                }
+                return ConvertUuidToHexString(characteristic.Uuid);
             }
 
             if (!string.IsNullOrEmpty(characteristic.UserDescription))
@@ -47,6 +39,13 @@ namespace SDKTemplate
             {
                 return "Custom Characteristic: " + characteristic.Uuid;
             }
+        }
+
+        private static string ConvertUuidToHexString(Guid uuid) {
+            ushort shortId = Utilities.ConvertUuidToShortId(uuid);
+            byte[] bytes = BitConverter.GetBytes(shortId);
+            byte[] byteR = bytes.Reverse().ToArray();
+            return BitConverter.ToString(byteR);
         }
 
         /// <summary>

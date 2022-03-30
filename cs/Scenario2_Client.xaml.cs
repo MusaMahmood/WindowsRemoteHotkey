@@ -294,7 +294,10 @@ namespace SDKTemplate
             GattReadResult result = await selectedCharacteristic.ReadValueAsync(BluetoothCacheMode.Uncached);
             if (result.Status == GattCommunicationStatus.Success)
             {
-                string formattedResult = FormatValueByPresentation(result.Value, presentationFormat);
+                //string formattedResult = FormatValueByPresentation(result.Value, presentationFormat);
+                byte[] data;
+                CryptographicBuffer.CopyToByteArray(result.Value, out data);
+                string formattedResult = ConvertByteArrayToString(data);
                 rootPage.NotifyUser($"Read result: {formattedResult}", NotifyType.StatusMessage);
             }
             else
@@ -452,9 +455,13 @@ namespace SDKTemplate
 
             ParseData(data);
 
-            var newValue = BitConverter.ToString(data);
+            var newValue = ConvertByteArrayToString(data);
             var message = $"Value at {DateTime.Now:hh:mm:ss.FFF}: {newValue}";
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => CharacteristicLatestValue.Text = message);
+        }
+
+        private string ConvertByteArrayToString(byte[] data) {
+            return BitConverter.ToString(data);
         }
 
         private void ParseData(byte[] data) {
