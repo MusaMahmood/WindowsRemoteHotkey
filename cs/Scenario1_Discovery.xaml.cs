@@ -233,6 +233,9 @@ namespace SDKTemplate
                                     rootPage.SelectedBleDeviceId = deviceInfo.Id;
                                     rootPage.SelectedBleDeviceName = deviceInfo.Name;
                                     //TODO: Launch connection & enable notifs:
+                                    StopBleDeviceWatcher();
+                                    EnumerateButton.Content = "Start enumerating";
+                                    rootPage.NotifyUser($"Device watcher stopped.", NotifyType.StatusMessage);
                                     ConnectAndEnableDevice();
                                 }
                                 // If device has a friendly name display it immediately.
@@ -448,12 +451,12 @@ namespace SDKTemplate
                 keyInjectList.Add(keyCommand);
             }
 
+            // TODO: Ensure ctrl, shift, win, alt keys are all released before pressing?
 
             // Sets key down 
-            inputInjector.InjectKeyboardInput(keyInjectList); // ctrl, shift,
-            await Task.Delay(100);
+            inputInjector.InjectKeyboardInput(keyInjectList);
 
-            // TODO: release all keys after use
+            // release all keys after use
             ctrl.KeyOptions = InjectedInputKeyOptions.KeyUp;
             shift.KeyOptions = InjectedInputKeyOptions.KeyUp;
             alt.KeyOptions = InjectedInputKeyOptions.KeyUp;
