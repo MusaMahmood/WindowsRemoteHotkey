@@ -227,9 +227,13 @@ namespace SDKTemplate
                         {
                             if (deviceInfo.Name != string.Empty)
                             {
-                                //rootPage.NotifyUser(String.Format("Added [{0}]   [{1}]", deviceInfo.Id, deviceInfo.Name), NotifyType.StatusMessage);
-                                if (deviceInfo.Id.Contains("7e:19:d5:19:f9:6c")) {
-                                    rootPage.NotifyUser(String.Format("Paired Device Detected. [Name: {0}, MAC addr: 7e:19:d5:19:f9:6c]", deviceInfo.Name), NotifyType.StatusMessage);
+                                // If device has a friendly name display it immediately.
+                                KnownDevices.Add(new BluetoothLEDeviceDisplay(deviceInfo));
+                                if (deviceInfo.Name.ToLower().Contains("tab s4") && 
+                                    (bool)deviceInfo.Properties["System.Devices.Aep.Bluetooth.Le.IsConnectable"]) {
+                                    Debug.WriteLine("Device found & is connectable");
+                                    //rootPage.NotifyUser(String.Format("Added [{0}]   [{1}]", deviceInfo.Id, deviceInfo.Name), NotifyType.StatusMessage);
+                                    rootPage.NotifyUser(String.Format("Paired Device Detected. [Name: {0}, MAC addr: {1}]", deviceInfo.Name, deviceInfo.Id), NotifyType.StatusMessage);
                                     rootPage.SelectedBleDeviceId = deviceInfo.Id;
                                     rootPage.SelectedBleDeviceName = deviceInfo.Name;
                                     //TODO: Launch connection & enable notifs:
@@ -238,8 +242,6 @@ namespace SDKTemplate
                                     rootPage.NotifyUser($"Device watcher stopped.", NotifyType.StatusMessage);
                                     ConnectAndEnableDevice();
                                 }
-                                // If device has a friendly name display it immediately.
-                                KnownDevices.Add(new BluetoothLEDeviceDisplay(deviceInfo));
                             }
                             else
                             {
@@ -482,7 +484,6 @@ namespace SDKTemplate
                         if (bleDeviceDisplay != null)
                         {
                             // Device is already being displayed - update UX.
-                            bleDeviceDisplay.Update(deviceInfoUpdate);
                             return;
                         }
 
