@@ -1,0 +1,1 @@
+MainPackage=D:\Projects\Windows\WindowsRemoteHotkey\cs\bin\x64\Release\BluetoothLE_1.0.9.0_x64.msix

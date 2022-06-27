@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>True</PackageOptionalProjectsInIdeBuilds>
+    <Source>D:\Projects\Windows\WindowsRemoteHotkey\cs\Assets\ble_uwp_app.png</Source>
+    <SmallTileSource>D:\Projects\Windows\WindowsRemoteHotkey\cs\Assets\ble_uwp_app.png</SmallTileSource>
+    <MediumTileSource>D:\Projects\Windows\WindowsRemoteHotkey\cs\Assets\ble_uwp_app.png</MediumTileSource>
+    <WideTileSource>D:\Projects\Windows\WindowsRemoteHotkey\cs\Assets\ble_uwp_app.png</WideTileSource>
+    <LargeTileSource>D:\Projects\Windows\WindowsRemoteHotkey\cs\Assets\ble_uwp_app.png</LargeTileSource>
+    <AppIconSource>D:\Projects\Windows\WindowsRemoteHotkey\cs\Assets\ble_uwp_app.png</AppIconSource>
+    <SplashScreenSource>D:\Projects\Windows\WindowsRemoteHotkey\cs\Assets\ble_uwp_app.png</SplashScreenSource>
+    <PackageLogoSource>D:\Projects\Windows\WindowsRemoteHotkey\cs\Assets\ble_uwp_app.png</PackageLogoSource>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <DeviceId>30f105c9-681e-420b-a277-7c086ead8a4e</DeviceId>
+    <UseEmulator>true</UseEmulator>
+  </PropertyGroup>
+</Project>

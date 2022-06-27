@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
@@ -9,15 +9,15 @@
 
     <Identity
       Name="Microsoft.SDKSamples.BluetoothLE.CS"
-      Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
-      Version="1.0.0.0" />
+      Publisher="CN=MusaM Software, O=MusaM Corporation, C=US"
+      Version="1.0.9.0" />
 
     <mp:PhoneIdentity PhoneProductId="a2214a83-6d31-41dd-b75f-0b8e56be182d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
     <Properties>
-        <DisplayName>Bluetooth Low Energy C# Sample</DisplayName>
+        <DisplayName>Remote Hotkey (Windows BLE)</DisplayName>
         <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
-        <Logo>Assets\StoreLogo-sdk.png</Logo>
+        <Logo>Assets\StoreLogo.png</Logo>
     </Properties>
 
     <Dependencies>
@@ -33,13 +33,11 @@
           Executable="$targetnametoken$.exe"
           EntryPoint="BluetoothLE.App">
             <uap:VisualElements
-              DisplayName="Bluetooth Low Energy C# sample"
-              Square150x150Logo="Assets\squareTile-sdk.png"
-              Square44x44Logo="Assets\SmallTile-sdk.png"
-              Description="Bluetooth Low Energy C# sample"
-              BackgroundColor="#00b2f0">
+              DisplayName="Remote Hotkey (Windows BLE)"
+              Description="Remote Hotkey (Windows BLE) based on Bluetooth Low Energy C# sample"
+              BackgroundColor="#00b2f0"   Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png">
                 <uap:SplashScreen Image="Assets\Splash-sdk.png" />
-                <uap:DefaultTile>
+                <uap:DefaultTile Square71x71Logo="Assets\SmallTile.png" Wide310x150Logo="Assets\WideTile.png" Square310x310Logo="Assets\LargeTile.png">
                     <uap:ShowNameOnTiles>
                         <uap:ShowOn Tile="square150x150Logo" />
                     </uap:ShowNameOnTiles>

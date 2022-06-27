@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppInstaller
+	Uri="file:///C:/remotehotkey_ble/BluetoothLE.appinstaller"
+	Version="1.0.9.0" xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2">
+	<MainBundle
+		Name="Microsoft.SDKSamples.BluetoothLE.CS"
+		Version="1.0.9.0"
+		Publisher="CN=MusaM Software, O=MusaM Corporation, C=US"
+		Uri="file:///C:/remotehotkey_ble/BluetoothLE_1.0.9.0_Test/BluetoothLE_1.0.9.0_x86_x64_arm.msixbundle" />
+	<Dependencies>
+		<Package
+			Name="Microsoft.NET.Native.Framework.1.3"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="arm"
+			Uri="file:///C:/remotehotkey_ble/BluetoothLE_1.0.9.0_Test/Dependencies/ARM/Microsoft.NET.Native.Framework.1.3.appx"
+			Version="1.3.24211.0" />
+		<Package
+			Name="Microsoft.NET.Native.Framework.1.3"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x64"
+			Uri="file:///C:/remotehotkey_ble/BluetoothLE_1.0.9.0_Test/Dependencies/x64/Microsoft.NET.Native.Framework.1.3.appx"
+			Version="1.3.24211.0" />
+		<Package
+			Name="Microsoft.NET.Native.Framework.1.3"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="file:///C:/remotehotkey_ble/BluetoothLE_1.0.9.0_Test/Dependencies/x86/Microsoft.NET.Native.Framework.1.3.appx"
+			Version="1.3.24211.0" />
+		<Package
+			Name="Microsoft.NET.Native.Runtime.1.4"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="arm"
+			Uri="file:///C:/remotehotkey_ble/BluetoothLE_1.0.9.0_Test/Dependencies/ARM/Microsoft.NET.Native.Runtime.1.4.appx"
+			Version="1.4.24201.0" />
+		<Package
+			Name="Microsoft.NET.Native.Runtime.1.4"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x64"
+			Uri="file:///C:/remotehotkey_ble/BluetoothLE_1.0.9.0_Test/Dependencies/x64/Microsoft.NET.Native.Runtime.1.4.appx"
+			Version="1.4.24201.0" />
+		<Package
+			Name="Microsoft.NET.Native.Runtime.1.4"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="file:///C:/remotehotkey_ble/BluetoothLE_1.0.9.0_Test/Dependencies/x86/Microsoft.NET.Native.Runtime.1.4.appx"
+			Version="1.4.24201.0" />
+		<Package
+			Name="Microsoft.VCLibs.140.00"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="arm"
+			Uri="file:///C:/remotehotkey_ble/BluetoothLE_1.0.9.0_Test/Dependencies/ARM/Microsoft.VCLibs.ARM.14.00.appx"
+			Version="14.0.30704.0" />
+		<Package
+			Name="Microsoft.VCLibs.140.00"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x64"
+			Uri="file:///C:/remotehotkey_ble/BluetoothLE_1.0.9.0_Test/Dependencies/x64/Microsoft.VCLibs.x64.14.00.appx"
+			Version="14.0.30704.0" />
+		<Package
+			Name="Microsoft.VCLibs.140.00"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="file:///C:/remotehotkey_ble/BluetoothLE_1.0.9.0_Test/Dependencies/x86/Microsoft.VCLibs.x86.14.00.appx"
+			Version="14.0.30704.0" />
+	</Dependencies>
+	<UpdateSettings>
+		<OnLaunch
+			HoursBetweenUpdateChecks="2880" />
+	</UpdateSettings>
+</AppInstaller>
