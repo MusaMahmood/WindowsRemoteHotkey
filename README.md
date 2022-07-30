@@ -21,6 +21,9 @@ description: "Shows how to use the Windows Bluetooth LE APIs to act either as a 
   samplefwlink: http://go.microsoft.com/fwlink/p/?LinkId=820786
 -->
 
+# INSTALLATION:
+> Install using the App package powershell install script: cs/AppPackages/BluetoothLE_VERSION_Test/Install.ps1
+
 # Bluetooth Low Energy sample
 
 Shows how to use the Windows Bluetooth LE APIs to act either as a BLE client or server. 
